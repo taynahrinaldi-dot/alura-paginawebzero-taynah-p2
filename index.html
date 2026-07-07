@@ -28,6 +28,10 @@
         .artigo-autor{
             font-weight: bold;
         }
+        .direitos{
+            text-align:center;
+            color: aqua;
+        }
      </style>
 </head>
 <body>
@@ -66,7 +70,28 @@
     </article>
     </main>
     <footer>
-        <p class="direito">Todos os direitos estão reservados ao autor do blog -Taynah Marianaa  </p>
+        <p class="direitos">Todos os direitos estão reservados ao autor do blog -Taynah Marianaa  </p>
     </footer>
-</body>
+</body> 
+<script>
+    const botoes = document.querySelectorAll("button");
+
+botoes.forEach(function (botao) {
+let curtiu = false;
+botao.addEventListener("click", botaoClicado);
+
+function botaoClicado() {
+console.log("fui clicado");
+let texto = botao.querySelector("span");
+
+if (curtiu === false) {
+texto.textContent++;
+curtiu = true;
+} else {
+texto.textContent--;
+curtiu = false;
+}
+}
+});
+</script>
 </html>
